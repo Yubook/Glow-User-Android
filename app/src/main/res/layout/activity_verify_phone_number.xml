@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.verify_phone_num.VerifyPhoneNumberActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".VerifyPhoneNumberActivity">
+
+        <RelativeLayout
+            android:id="@+id/relToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_4sdp">
+
+            <ImageView
+                android:id="@+id/ivBackButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                style="@style/HeadingType2BlackFont"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_2sdp"
+                android:text="@string/verify_phone_number"
+                android:textSize="@dimen/_16sdp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            style="@style/HeadingType2BlackFont"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/relToolbar"
+            android:layout_marginHorizontal="@dimen/_32sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:gravity="center"
+            android:text="@string/verify_phone_number_heading" />
+
+
+        <RelativeLayout
+            android:id="@+id/relPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text1"
+            android:padding="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:background="@drawable/drawable_rounded_corner_border_black"
+            android:layout_marginHorizontal="@dimen/_16sdp">
+
+            <com.hbb20.CountryCodePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:id="@+id/countryCodePicker"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@color/app_black"
+                android:paddingStart="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/countryCodePicker"/>
+
+            <EditText
+                android:id="@+id/edtPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:background="@null"
+                android:drawableEnd="@drawable/ic_call_grey"
+                android:padding="@dimen/_6sdp"
+                android:hint="@string/phone_number"
+                android:textColorHint="@color/gray"
+                android:layout_toEndOf="@+id/countryCodePicker"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvRegisterOrLogin"
+            style="@style/MainBlackRoundedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relPhoneNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:paddingStart="@dimen/_32sdp"
+            android:paddingEnd="@dimen/_32sdp"
+            android:text="@string/register_or_login"
+            android:textColor="@color/app_black"
+            />
+
+        <!--<com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dialog_text_input_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text1"
+            android:layout_marginTop="@dimen/_32sdp"
+            app:hintTextColor="@color/app_black"
+            android:hint="Phone"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:textColorHint="@color/app_black"
+            app:boxStrokeColor="@color/app_black"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dialog_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+    </RelativeLayout>
+
+</RelativeLayout>

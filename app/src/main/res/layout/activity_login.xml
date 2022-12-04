@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            tools:context=".VerifyPhoneNumberActivity">
+
+            <ImageView
+                android:id="@+id/ivLoginImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/relBottom"
+                android:scaleType="center"
+                android:src="@drawable/ic_login_image1" />
+
+            <RelativeLayout
+                android:id="@+id/relBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="@dimen/_16sdp">
+
+                <RelativeLayout
+                    android:id="@+id/relPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_28sdp"
+                    android:background="@drawable/drawable_rounded_corner_border_black"
+                    android:padding="@dimen/_2sdp">
+
+                    <Spinner
+                        android:id="@+id/spnCity"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_centerVertical="true"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="1dp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/spnCity"
+                        android:background="@color/app_black"
+                        android:paddingStart="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_4sdp" />
+
+                    <EditText
+                        android:id="@+id/edtPhoneNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/view"
+                        android:background="@null"
+                        android:hint="@string/mobile_number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:padding="@dimen/_8sdp"
+                        android:textColorHint="@color/gray" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/text1"
+                    style="@style/HeadingType2BlackFont"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/relPhoneNumber"
+                    android:layout_marginHorizontal="@dimen/_32sdp"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:gravity="center"
+                    android:text="@string/verify_phone_number_heading"
+                    android:textSize="@dimen/_14sdp" />
+
+                <RelativeLayout
+                    android:id="@+id/relGetStarted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/text1"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:background="@drawable/ripple_effect">
+
+                    <LinearLayout
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tvRegisterOrLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:padding="@dimen/_14sdp"
+                            android:textSize="@dimen/_12sdp"
+                            android:text="@string/register_or_login"
+                            android:textColor="@color/app_black"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_12sdp"
+                            android:padding="@dimen/_4sdp"
+                            android:src="@drawable/ic_arrow_next" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

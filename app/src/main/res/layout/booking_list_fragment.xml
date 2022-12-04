@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.booking_list.BookingListFragment">
+
+    <RelativeLayout
+        android:id="@+id/relToolBarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:background="@color/app_pink"
+            android:padding="@dimen/_4sdp">
+
+            <TextView
+                android:id="@+id/tvToolbarTitle"
+                style="@style/HeadingType2BlackFont"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:drawablePadding="@dimen/_4sdp"
+                android:text="@string/booking_details"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/_15sdp" />
+
+        </RelativeLayout>
+
+        <include
+            layout="@layout/app_toolbar_new"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relToolBarMain">
+
+        <LinearLayout
+            android:id="@+id/relOrderType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/drawable_grey_rounded_corner_bg"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbPrevious"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_tab_selector"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="@string/previous"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbCurrent"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_tab_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/current"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbFuture"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_tab_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/future"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/relOrderType"
+            android:paddingBottom="@dimen/_15sdp"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookingRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_booking" />
+
+            <TextView
+                android:id="@+id/tvNoData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="No bookings found"
+                android:textColor="@color/app_black"
+                android:textSize="@dimen/_16sdp"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:src="@drawable/ic_booking_message" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lottie_4.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

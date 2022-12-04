@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.new_dashboard.NewDashBoardFragment">
+
+    <RelativeLayout
+        android:id="@+id/mainToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_48sdp"
+            android:background="@color/white"
+            android:padding="@dimen/_4sdp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/relSelectLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <TextView
+                    android:id="@+id/bookingLocation"
+                    style="@style/HeadingType2BlackFont"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:text="@string/current_location"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvBookingLocation"
+                    style="@style/HeadingType2BlackFont"
+                    android:layout_below="@+id/bookingLocation"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:drawableEnd="@drawable/ic_arrow_down_24"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/select_location"
+                    android:textColor="@color/app_black"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relNotification"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true">
+
+                <ImageView
+                    android:id="@+id/ivNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_notification"
+                    app:tint="@color/app_black" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivNotificationBadge"
+                    android:layout_width="@dimen/_5sdp"
+                    android:layout_height="@dimen/_5sdp"
+                    android:layout_alignEnd="@+id/ivNotification"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:background="@drawable/drawable_red_rounded_bg"
+                    android:padding="@dimen/_2sdp"
+                    android:visibility="gone"
+                    app:civ_border_color="@color/app_black"
+                    app:civ_border_width="@dimen/_1sdp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <include
+            layout="@layout/app_toolbar_new"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainToolBar"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+        android:background="@drawable/search_edittext_bg"
+        android:drawableEnd="@drawable/ic_search_black"
+        android:hint="@string/search"
+        android:inputType="text"
+        android:padding="@dimen/_8sdp"
+        android:singleLine="true"
+        android:textSize="@dimen/_12sdp" />
+
+    <!--<ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:visibility="gone"
+        android:indeterminateTint="@color/app_black"
+        android:layout_centerInParent="true"/>-->
+
+    <TextView
+        android:id="@+id/tvService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtSearch"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/services"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/serviceRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvService"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="horizontal" />
+
+    <RelativeLayout
+        android:id="@+id/tvBarberNearMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serviceRecyclerView"
+        android:layout_marginTop="@dimen/_20sdp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="lottie_1.json"
+            android:layout_marginTop="@dimen/_28sdp"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lottie_main"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_48sdp"
+            android:src="@drawable/ic_join_discord" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/lottie_main"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/drawable_airdrop_text_bg"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:padding="@dimen/_8sdp"
+            android:text="We appreciate your patience as we finish\ndeveloping the app. To show our gratitude,\nyou will get air dropped CLIP tokens. "
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tvBarbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="@string/barbers_near_you"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvFilter"
+            style="@style/HeadingType2BlackFont"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="@string/filter"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/_12sdp"
+            android:visibility="gone"
+            app:drawableEndCompat="@drawable/ic_arrow_down_24" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvBarberNearMe"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/barberRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/tvNoBarber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:gravity="center"
+            android:text="No barber found according\nto your need"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/_16sdp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/app_black"
+        android:visibility="gone" />
+
+</RelativeLayout>

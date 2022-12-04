@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/app_pink">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/app_black"
+        android:textSize="@dimen/_12sdp"
+        android:textAllCaps="true"
+        android:lineSpacingExtra="@dimen/_2sdp"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:text="We are enhancing our app and integrating all new Web3 features! Watch this space 👀"/>
+
+</RelativeLayout>

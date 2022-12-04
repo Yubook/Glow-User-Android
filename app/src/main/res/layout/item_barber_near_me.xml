@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_2sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_2sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/_2sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:background="@drawable/service_unselected_bg"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ivBarberImageCard"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:elevation="@dimen/_1sdp"
+                app:cardElevation="@dimen/_1sdp"
+                app:cardUseCompatPadding="true"
+                android:background="@android:color/transparent"
+                app:cardCornerRadius="@dimen/_8sdp">
+
+                <ImageView
+                    android:id="@+id/ivBarberImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_img" />
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/ivBarberImageCard"
+                android:layout_toStartOf="@+id/ivBarberFav"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_12sdp">
+
+                <TextView
+                    android:id="@+id/tvBarberName"
+                    style="@style/HeadingType2BlackFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Cannor Barton"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/tvBarberDistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvBarberName"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    tools:text="2 miles away / Haircut $25" />
+
+            </RelativeLayout>
+
+            <RatingBar
+                android:id="@+id/barberRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:isIndicator="true"
+                android:layout_alignParentEnd="true"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:progressBackgroundTint="@color/unselected_rating_color"
+                android:progressTint="@color/app_black"
+                android:stepSize="1" />
+
+            <TextView
+                android:id="@+id/tvDriverTotalReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/barberRatingBar"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_10sdp"
+                tools:text="(53 Ratings)" />
+
+            <ImageView
+                android:id="@+id/ivBarberFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/ic_unfav_barber" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

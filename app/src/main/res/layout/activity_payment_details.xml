@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.fade.ui.payment_details.PaymentDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/relToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_pink"
+        android:padding="@dimen/_8sdp">
+
+        <ImageView
+            android:id="@+id/ivBackButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:padding="@dimen/_8sdp"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/app_black" />
+
+        <TextView
+            android:id="@+id/tvToolbarTitle"
+            style="@style/HeadingType2BlackFont"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:drawablePadding="@dimen/_4sdp"
+            android:text="@string/payment_details"
+            android:textColor="@color/app_black"
+            android:textSize="@dimen/_15sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relToolbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_8sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/relBarber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!--<androidx.cardview.widget.CardView
+                                android:id="@+id/profileCard"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                app:cardCornerRadius="@dimen/_40sdp">-->
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ivDriverImage"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_40sdp"
+                                android:src="@drawable/ic_dummy_image" />
+
+                            <!--</androidx.cardview.widget.CardView>-->
+
+                            <LinearLayout
+                                android:id="@+id/relBarberDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/ivDriverImage"
+                                android:layout_alignBottom="@+id/ivDriverImage"
+                                android:layout_marginStart="@dimen/_8sdp"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:layout_toStartOf="@+id/barberRating"
+                                android:layout_toEndOf="@+id/ivDriverImage"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tvDriverName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+
+                                    android:fontFamily="@font/sf_pro_display_regular"
+                                    android:text="Gregory"
+                                    android:textColor="@color/app_black"
+                                    android:textSize="@dimen/_13sdp" />
+
+                                <TextView
+                                    android:id="@+id/tvDriverServices"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/sf_pro_display_regular"
+                                    android:text="Hair Dresser"
+                                    android:textSize="@dimen/_11sdp"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/barberRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/relBarberDetail"
+                                android:layout_alignBottom="@+id/relBarberDetail"
+                                android:layout_alignParentEnd="true"
+                                android:orientation="vertical">
+
+                                <RatingBar
+                                    android:id="@+id/driverReviewRatingBar"
+                                    style="@style/Widget.AppCompat.RatingBar.Small"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:isIndicator="true"
+                                    android:progressBackgroundTint="@color/unselected_rating_color"
+                                    android:progressTint="@color/app_black"
+                                    android:rating="3"
+                                    android:stepSize="1" />
+
+                                <!--<LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_4sdp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_start_selected" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_start_selected" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_start_selected" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_start_unselected" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_start_unselected" />
+
+                                </LinearLayout>-->
+
+                                <!--<RatingBar
+                                    android:id="@+id/barberRatingBar"
+                                    style="@style/RatingBarStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="12dp"
+                                    android:layout_marginTop="@dimen/_4sdp"
+                                    android:indeterminateOnly="false"
+                                    android:isIndicator="true"
+                                    android:rating="3"
+                                    android:stepSize="1"
+                                    android:transformPivotX="0dp"
+                                    android:transformPivotY="0dp" />-->
+
+                                <TextView
+                                    android:id="@+id/tvDriverTotalReview"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_2sdp"
+                                    android:text="Review : 35"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivDriverImage"
+                                android:layout_toEndOf="@+id/ivDriverImage"
+                                android:orientation="vertical"
+                                android:padding="@dimen/_4sdp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_4sdp">
+
+                                    <TextView
+                                        android:id="@+id/bookedService"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/booked_service"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                    <TextView
+                                        android:id="@+id/tvBookedService"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_4sdp"
+                                        android:layout_toEndOf="@+id/bookedService"
+                                        android:text="Hair Cut"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_4sdp">
+
+                                    <TextView
+                                        android:id="@+id/totalPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/total"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                    <TextView
+                                        android:id="@+id/tvTotalPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_4sdp"
+                                        android:layout_toEndOf="@+id/totalPrice"
+                                        android:text="£ 26.50"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/tvBookingDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:background="@drawable/drawable_black_rounded_corner_bg"
+                                    android:drawableStart="@drawable/ic_date_white"
+                                    android:drawablePadding="@dimen/_4sdp"
+                                    android:fontFamily="@font/sf_pro_display_regular"
+                                    android:paddingHorizontal="@dimen/_10sdp"
+                                    android:paddingVertical="@dimen/_6sdp"
+                                    android:text="Monday, 11 Jan 2021 @ 06:00 pm"
+                                    android:textColor="@color/app_black"
+                                    android:textSize="@dimen/_11sdp" />
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:drawablePadding="@dimen/_6sdp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="@string/we_protect_your_personal_information"
+                    android:textSize="@dimen/_14sdp"
+                    app:drawableStartCompat="@drawable/ic_shield" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView"
+                    android:layout_marginHorizontal="@dimen/_16sdp"
+                    android:paddingVertical="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tvCardDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:text="@string/card_details"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <EditText
+                        android:id="@+id/edtUserName"
+                        style="@style/BoxEditText"
+                        android:layout_below="@+id/tvCardDetails"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:hint="Name on Card"
+                        android:inputType="text"
+                        android:text="John Doe"
+                        android:textColorHint="@color/gray" />
+
+                    <EditText
+                        android:id="@+id/edtCardNumber"
+                        style="@style/BoxEditText"
+                        android:layout_below="@+id/edtUserName"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:hint="@string/card_number"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:text="4111 1111 1111 1111"
+                        android:textColorHint="@color/gray" />
+
+                    <LinearLayout
+                        android:id="@+id/linearCardData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/edtCardNumber"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:weightSum="2">
+
+                        <EditText
+                            android:id="@+id/edtCardExpiryDate"
+                            style="@style/BoxEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginEnd="@dimen/_6sdp"
+                            android:layout_weight="1"
+                            android:hint="MM/YY"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="5"
+                            android:text="02/23"
+                            android:textColorHint="@color/gray" />
+
+                        <EditText
+                            android:id="@+id/edtCVV"
+                            style="@style/BoxEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:layout_weight="1"
+
+                            android:hint="CVV"
+                            android:inputType="numberPassword"
+                            android:maxLength="3"
+                            android:text="123"
+                            android:textColorHint="@color/gray" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relWalletBalance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearCardData"
+                        android:layout_marginTop="@dimen/_8sdp">
+
+                        <TextView
+                            android:id="@+id/tvSecurePayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/secure_payment"
+                            android:textColor="@color/app_black"
+                            app:drawableStartCompat="@drawable/ic_lock" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_4sdp"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="@string/powered_by_stripe"
+                            android:textColor="@color/app_black" />
+
+                        <CheckBox
+                            android:id="@+id/cbWalletBal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvSecurePayment"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/wallet_balance"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/tvOfferAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/cbWalletBal"
+                            android:layout_alignBottom="@+id/cbWalletBal"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_toEndOf="@+id/cbWalletBal"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/_9sdp"
+                            android:visibility="gone"
+                            tools:text="(including 2.5 Offer Amount)" />
+
+                        <CheckBox
+                            android:id="@+id/cbDiscount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cbWalletBal"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:text="@string/available_discount"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/relWalletBalance">
+
+                        <TextView
+                            android:id="@+id/tvOr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:text="OR"
+                            android:textColor="@color/app_black"
+                            android:visibility="gone"
+                            app:drawableStartCompat="@drawable/ic_lock" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/relCrypto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvOr"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_16sdp"
+                            android:background="@drawable/drawable_pink_rounded_corner_bg"
+                            android:gravity="center"
+                            android:paddingHorizontal="@dimen/_4sdp"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/tvPayWithCrypto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+
+                                android:gravity="center_horizontal"
+                                android:text="@string/pay_with"
+                                android:textColor="@color/app_black"
+                                android:textSize="@dimen/_15sdp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_42sdp"
+                                android:layout_marginStart="@dimen/_4sdp"
+                                android:layout_toEndOf="@+id/tvPayWithCrypto"
+                                android:src="@drawable/ic_crypto" />
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/tvBookingDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/relCrypto"
+                            android:layout_marginTop="@dimen/_12sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:background="@drawable/drawable_dark_grey_rounded_corner_bg"
+                            android:drawablePadding="@dimen/_4sdp"
+                            android:fontFamily="@font/sf_pro_display_regular"
+                            android:gravity="center"
+                            android:paddingHorizontal="@dimen/_10sdp"
+                            android:paddingVertical="@dimen/_8sdp"
+                            android:text="@string/payment_screen_desc"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:id="@+id/tvContinue"
+                            style="@style/MainBlackRoundedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvBookingDesc"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_32sdp"
+                            android:paddingStart="@dimen/_32sdp"
+                            android:paddingEnd="@dimen/_32sdp"
+                            android:text="@string/continue_text"
+                            android:textColor="@color/app_black"
+                            android:textSize="@dimen/_15sdp" />
+
+                        <ProgressBar
+                            android:id="@+id/progress_bar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvBookingDesc"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_32sdp"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

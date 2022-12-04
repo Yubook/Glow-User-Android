@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvFilterName"
+        style="@style/HeadingType2BlackFont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        android:text="@string/sort_by"
+        android:textSize="@dimen/_12sdp" />
+
+    <ImageView
+        android:id="@+id/ivFilterSelected"
+        android:layout_width="@dimen/_16sdp"
+        android:layout_height="@dimen/_16sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:src="@drawable/ic_select_service" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:background="@color/gray"
+        android:layout_below="@+id/tvFilterName"
+        android:layout_height="1dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardElevation="@dimen/_2sdp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/drawable_white_rounded_corner_bg">
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_16sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivOfferImage"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:src="@drawable/ic_pound_rounded" />
+
+                <TextView
+                    android:id="@+id/tvDealPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivOfferImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:text="£ 23.50"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_36sdp" />
+
+                <RelativeLayout
+                    android:id="@+id/relSubscriptionDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvDealPrice"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:background="@drawable/ic_duble_side_arrow_bg">
+
+                    <TextView
+                        android:id="@+id/tvOfferName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginHorizontal="32dp"
+                        android:layout_marginVertical="@dimen/_6sdp"
+                        android:gravity="center"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="1 Hair Cut /\nMonth Subscription"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16sdp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/relBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <TextView
+                    android:id="@+id/tvCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="1px"
+                    android:layout_weight="1"
+                    android:background="@color/app_black"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/tvTakeDeal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="1px"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:fontFamily="@font/sf_pro_display_regular"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:padding="@dimen/_15sdp"
+                    android:text="@string/take_the_deal"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
